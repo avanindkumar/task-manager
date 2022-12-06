@@ -20,8 +20,8 @@ const Task = ({ task, onDelete, onUpdate }) => {
     onDelete(task.id);
     setModal(false);
   };
-  const handleTaskUpdate = (newTask) => {
-    onUpdate(newTask);
+  const handleTaskUpdate = (newTask, id) => {
+    onUpdate(newTask, id);
     setUpdateModal(false);
   };
   return (

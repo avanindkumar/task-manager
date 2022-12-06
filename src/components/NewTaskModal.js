@@ -9,7 +9,6 @@ import {
 import React, { useEffect, useState } from "react";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { DatePicker } from "@mui/x-date-pickers";
-import { v4 as uuidv4 } from "uuid";
 import moment from "moment/moment";
 
 const NewTaskModal = ({
@@ -54,11 +53,10 @@ const NewTaskModal = ({
   const handleReminder = (e) => {
     setReminder(e.target.checked);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const id = uuidv4();
+
     const newTask = {
-      id,
       title,
       description,
       time: moment(time).format("LT"),
